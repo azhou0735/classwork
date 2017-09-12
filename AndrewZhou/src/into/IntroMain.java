@@ -1,4 +1,4 @@
-package intro;
+package into;
 
 public class IntroMain {
 
