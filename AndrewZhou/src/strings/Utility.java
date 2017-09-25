@@ -57,7 +57,10 @@ public class Utility{
 	String[] notWords = {"not","no","never"};
 	for(int i = 0; i < notWords.length; i++)
 	{
-		
+		if(s.substring(psn-1-notWords[i].length(),psn-1).equals(notWords[i]))
+				{
+			return false;
+				}
 	}
     return true;
   }
