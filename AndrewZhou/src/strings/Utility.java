@@ -25,24 +25,40 @@ public class Utility{
   }
   
   public static boolean keywordIsIsolated(int psn, String keyword, String s){
-	  	/*if(keyword.equals(s.substring(psn,keyword.length() + 1)))
-	  			{*/
-			  		if(psn != 0)
-			  		{
-			  			if(s.substring(psn-1,psn).compareTo("a") < 0)
-			  			{}else{return false;}
-			  		}
-			  		if(psn+keyword.length() < s.length())
-			  		{
-			  			if(s.substring(psn + keyword.length(),psn+keyword.length() + 1).compareTo("a") < 0)
-			  			{}else{return false;}
-			  		}
-			  		return true;
+	  	if(keyword.equals(s.substring(psn,psn + keyword.length())))
+		{
+	  		if(psn != 0)
+	  		{
+	  			if(s.substring(psn-1,psn).compareTo("a") < 0)
+	  			{}
+	  			else
+	  			{
+	  				return false;
 	  			}
-	  		/*return false;
-  }*/
+	  		}
+	  		if(psn+keyword.length() < s.length())
+	  		{
+	  			if(s.substring(psn + keyword.length(),psn+keyword.length() + 1).compareTo("a") < 0)
+	  			{}
+	  			else
+	  			{
+	  				return false;
+	  			}
+	  		}
+	  		return true;
+		}
+	  		else
+	  		{
+	  			return false;
+	  		}
+  }
   
   public static boolean noNegations(String s, int psn){
+	String[] notWords = {"not","no","never"};
+	for(int i = 0; i < notWords.length; i++)
+	{
+		
+	}
     return true;
   }
   
