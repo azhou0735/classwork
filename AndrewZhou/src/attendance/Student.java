@@ -35,7 +35,7 @@ public class Student implements Attendee {
 		String last = this.getLastName();
 		boolean status = this.isPresent();
 		String returnString;
-		if(this.getFirstName()>20)
+		if(this.getLastName().length()>20)
 		{
 			last = this.getLastName().substring(0,17) + "...";
 		}
@@ -44,6 +44,11 @@ public class Student implements Attendee {
 		{
 			returnString += " ";
 		}
+		if(this.getLastName().length()>20)
+		{
+			first = this.getFirstName().substring(0,17) + "...";
+		}
+		returnString += first;
 		return returnString;
 		
 	}
