@@ -49,7 +49,17 @@ public class Student implements Attendee {
 			first = this.getFirstName().substring(0,17) + "...";
 		}
 		returnString += first;
-		return returnString;
+		for(int i = returnString.length(); i<40; i++)
+		{
+			returnString += " ";
+		}
+		if(this.isPresent())
+		{
+			return returnString + "PRESENT \n";
+		}
+		else{
+			return returnString + "ABSENT \n";
+		}
 		
 	}
 	
