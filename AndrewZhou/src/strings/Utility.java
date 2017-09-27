@@ -55,8 +55,10 @@ public class Utility{
   
   public static boolean noNegations(String s, int psn){
 	String[] notWords = {"not","no","never"};
-	for(int i = 0; i < notWords.length; i++)
+	for(int i = 0; i < notWords.length-1; i++)
 	{
+		if(psn == 0)
+			return true;
 		if(s.substring(psn-1-notWords[i].length(),psn-1).equals(notWords[i]))
 				{
 			return false;
