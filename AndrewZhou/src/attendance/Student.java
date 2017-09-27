@@ -6,8 +6,8 @@ public class Student implements Attendee {
 	private boolean presentStatus = false;
 	public Student(String first, String last)
 	{
-		String firstName = first;
-		String lastName = last;
+		firstName = first;
+		lastName = last;
 	}
 	public boolean isPresent() {
 		return presentStatus;
@@ -53,7 +53,7 @@ public class Student implements Attendee {
 		{
 			returnString += " ";
 		}
-		if(this.isPresent())
+		if(status)
 		{
 			return returnString + "PRESENT \n";
 		}
