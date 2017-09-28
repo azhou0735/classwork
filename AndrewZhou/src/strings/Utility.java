@@ -13,7 +13,6 @@ public class Utility{
   
 
   public static void main(String[] args){
-    //this main method is designed to help you test your keywordIsIsolated method and noNegations method
     if( keywordIsIsolated(4,"good","i'm good") && keywordIsIsolated(0,"good","good. how are you?") 
     && !keywordIsIsolated(4,"good","goodbye. i hope you feel good") && keywordIsIsolated(25,"good","goodbye. i hope you feel good")){
       print("You passed all the keywordIsIsolated tests.");
@@ -21,9 +20,24 @@ public class Utility{
     if(!noNegations("I am not great, but I am okay", 9) && noNegations("I am not great, but I am okay", 25) && noNegations("okay", 0)){
       print("You passed all the noNegations tests.");
     }
-    
-  }
   
+  /* This method returns the index of keyword in the searchString where keyword is isolated and has noNegations. Returns -1 if keyword is not found.*/
+  }
+  public static int findKeyword(String searchString, String keyword, int startPsn) {
+	  searchString = searchString.toLowerCase();
+	  keyword = keyword.toLowerCase();
+	  int psn = searchString.indexOf(keyword, startPsn);
+	  
+	  while(psn >=  0) {
+		  
+		  if(keywordIsIsolated(psn, keyword, searchString) && noNegations(searchString, psn)) {
+			return psn;  
+		  }else {
+			  psn = searchString.indexOf(keyword, psn+1);
+		  }
+	  }
+	  return -1;
+  }
   public static boolean keywordIsIsolated(int psn, String keyword, String s){
 	  	if(keyword.equals(s.substring(psn,psn + keyword.length())))
 		{
