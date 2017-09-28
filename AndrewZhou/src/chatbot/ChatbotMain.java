@@ -1,10 +1,12 @@
 package chatbot;
 
+import java.util.Scanner;
+
 public class ChatbotMain {
 
 		public static Chatbot chatbot = new Chatbot();
 		
-		public static void main(String[] args) {
+		public static void main1(String[] args) {
 			chatbot.startTalking();
 		}
 		
@@ -19,8 +21,7 @@ public class ChatbotMain {
     if(!noNegations("I am not great, but I am okay", 9) && noNegations("I am not great, but I am okay", 25) && noNegations("okay", 0)){
       print("You passed all the noNegations tests.");
     }
-  
-  /* This method returns the index of keyword in the searchString where keyword is isolated and has noNegations. Returns -1 if keyword is not found.*/
+    
   }
   public static int findKeyword(String searchString, String keyword, int startPsn) {
 	  searchString = searchString.toLowerCase();
