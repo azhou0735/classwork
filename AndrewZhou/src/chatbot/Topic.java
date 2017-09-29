@@ -1,5 +1,5 @@
 package chatbot;
 
-public class Topic {
+public class interface Topic {
 
 }
