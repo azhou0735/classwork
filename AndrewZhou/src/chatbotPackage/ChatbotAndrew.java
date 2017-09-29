@@ -1,7 +1,7 @@
 package chatbotPackage;
 //
 public class ChatbotAndrew implements Topic{
-
+	//Metro, GTA, dishonored, portal, payday2, skyrim, fallout, minecraft, 
 	private String[] keywords;
 	private String[] goodbyeWords;
 	private String secretWord;
