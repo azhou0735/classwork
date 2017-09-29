@@ -1,4 +1,4 @@
-package chatbot;
+package chatbotPackage;
 //
 public class ChatbotAndrew implements Topic{
 
@@ -33,7 +33,7 @@ public class ChatbotAndrew implements Topic{
 			if(ChatbotMain.findKeyword(response, goodbyeWords[0], 0) >= 0) {
 				chatting = false;
 				ChatbotMain.chatbot.startTalking();
-			}else if(ChatbotMain.findKeyword(response,  secretWord,  0) >= 0) {
+			}else if(ChatbotMain.findKeyword(response, secretWord,  0) >= 0) {
 				ChatbotMain.print("Sieg to you too. Go to Brazil for the meet up");
 			}else {
 				ChatbotMain.print("Huh, you are a heathen, I'll give you another chance.");
