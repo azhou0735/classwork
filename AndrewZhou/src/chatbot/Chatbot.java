@@ -1,6 +1,6 @@
 package chatbot;
 
-public class Chatbot {
+public class Chatbot{
 	//
 	private String userName;
 	private Topic andrew;
@@ -20,7 +20,7 @@ public class Chatbot {
 			String response = ChatbotMain.getInput();
 			if(andrew.isTriggered(response)) {
 				chatting = false;
-				andrew.startChatting();
+				andrew.startChatting(response);
 			}else {
 				ChatbotMain.print("I'm sorry. I don't understand.");
 			}

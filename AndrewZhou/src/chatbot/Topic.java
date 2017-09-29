@@ -1,5 +1,8 @@
 package chatbot;
 //
-public class interface Topic {
+public interface Topic {
 
+	boolean isTriggered(String response);
+
+	void startChatting(String response);
 }
