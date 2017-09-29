@@ -1,5 +1,5 @@
 package intro;
-
+//
 //class is a file describing a new data type
 public class CodingConventions {
 	

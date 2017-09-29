@@ -1,5 +1,5 @@
 package attendance;
-
+//
 public interface Attendee {
 
 	/**In addition to the following methods, please include a 

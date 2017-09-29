@@ -4,6 +4,7 @@ package intro;//this is a package
 public class IntroMain {
 		
 	//constants (public)
+	//STATIC is independent of instances,
 	public static final String[] DESCRIPTIONS = {" is a teacher",
 			" is a student",
 			" is a human being",

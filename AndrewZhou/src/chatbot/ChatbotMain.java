@@ -1,7 +1,7 @@
 package chatbot;
 
 import java.util.Scanner;
-
+//
 public class ChatbotMain {
 
 		public static Chatbot chatbot = new Chatbot();
@@ -23,6 +23,7 @@ public class ChatbotMain {
     }
     
   }
+  
   public static int findKeyword(String searchString, String keyword, int startPsn) {
 	  searchString = searchString.toLowerCase();
 	  keyword = keyword.toLowerCase();
@@ -38,6 +39,7 @@ public class ChatbotMain {
 	  }
 	  return -1;
   }
+  
   public static boolean keywordIsIsolated(int psn, String keyword, String s){
 	  	if(keyword.equals(s.substring(psn,psn + keyword.length())))
 		{
