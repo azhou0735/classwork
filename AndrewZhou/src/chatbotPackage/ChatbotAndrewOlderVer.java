@@ -161,7 +161,7 @@ public class ChatbotAndrew implements Topic{
 			{
 				chatting = false;
 				ChatbotMain.chatbot.continueTalking(response);
-			}
+			}//
 		}
 	}
 	
