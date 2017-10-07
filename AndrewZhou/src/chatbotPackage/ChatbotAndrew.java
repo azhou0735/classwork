@@ -97,7 +97,10 @@ public class ChatbotAndrew implements Topic{
 			String printLine = "";
 			
 			//LOGIC SECTION
-			
+			if(gameSubject > -1)
+			{
+				printLine = "I like that game too.";
+			}
 			responsesData[responseIndex] = analyzeResponse(response);
 			gameSubject = checkDoubleArray(response, specificGamesKeywords);
 			if(!printLine.equals(""))
