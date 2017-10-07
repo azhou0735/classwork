@@ -3,7 +3,7 @@ package chatbotPackage;
 import java.util.ArrayList;
 
 public class ChatbotAndrew implements Topic{
-
+//I hate github pushes
 	private boolean chatting;
 	
 	private String[] keywords;
