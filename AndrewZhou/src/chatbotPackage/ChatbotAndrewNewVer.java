@@ -2,7 +2,7 @@ package chatbotPackage;
 
 import java.util.ArrayList;
 
-public class ChatbotAndrew implements Topic{
+public class ChatbotAndrewNewVer implements Topic{
 	
 	private boolean chatting;
 	
@@ -25,7 +25,7 @@ public class ChatbotAndrew implements Topic{
 	private int gameSubject;
 	private boolean chatBotAskedQuestion;
 	
-	public ChatbotAndrew()
+	public ChatbotAndrewNewVer()
 	{
 		String[] kwords = {"single", "solo", "sp", "single player", "singleplayer", "pve"};
 		keywords = kwords;
