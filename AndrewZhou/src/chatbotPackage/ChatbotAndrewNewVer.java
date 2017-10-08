@@ -12,7 +12,7 @@ public class ChatbotAndrewNewVer implements Topic{
 	
 	private int[][] responsesData;
 	
-	private String[] subjectWords; //vocab arrays//ssa
+	private String[] subjectWords; //vocab arrays
 	private String[] positiveWords;
 	private String[] negativeWords;
 	private String[] positiveResponseWords;
@@ -94,6 +94,7 @@ public class ChatbotAndrewNewVer implements Topic{
 		
 		while(chatting)
 		{
+			response = ChatbotMain.getInput();
 			String printLine = "";
 			
 			//LOGIC SECTION
