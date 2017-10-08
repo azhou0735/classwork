@@ -12,7 +12,7 @@ public class ChatbotAndrew implements Topic{
 	
 	private int[][] responsesData;
 	
-	private String[] subjectWords; //vocab arrays
+	private String[] subjectWords; //vocab arrays//ssa
 	private String[] positiveWords;
 	private String[] negativeWords;
 	private String[] positiveResponseWords;
@@ -101,19 +101,11 @@ public class ChatbotAndrew implements Topic{
 			{
 				printLine = "I like that game too.";
 			}
-			responsesData[responseIndex] = analyzeResponse(response);
+			
 			gameSubject = checkDoubleArray(response, specificGamesKeywords);
 			if(!printLine.equals(""))
 			{
-				responseIndex ++;
-				responseNumber ++;
-				
-				if(responseIndex > 9)
-				{
-					responseIndex = 0;
-					loopResponsesData = true;
-				}
-				
+				recordResponse(response);
 				ChatbotMain.print(printLine);
 			}
 			else
@@ -176,6 +168,17 @@ public class ChatbotAndrew implements Topic{
 		returnIntArray[2] = noneOrNegativeOrPositive;
 		return returnIntArray;
 		
+	}
+	public void recordResponse(String response)
+	{
+		responsesData[responseIndex] = analyzeResponse(response);
+		responseIndex ++;
+		responseNumber ++;
+		if(responseIndex > 9)
+		{
+			responseIndex = 0;
+			loopResponsesData = true;
+		}
 	}
 	
 }
