@@ -93,7 +93,6 @@ public class ArraysMain {
 		return longestSequence;
 	}
 	
-	public 
 	
 	public void cycleThrough(int[] intRay, int n) {
 		while(n!=0)
