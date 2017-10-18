@@ -56,14 +56,15 @@ public class ArraysMain {
 				if(currentSequence > longestSequence)
 					{
 					longestSequence = currentSequence;
-					longestSequence = currentSequence;
+					longestSequenceEnd = i;
+					longestSequenceStart = currentSequenceStart;
 					}
 			}
 		}
-		int[] returnArray = new int[longestSequenceEnd - longestSequence + 1];
+		int[] returnArray = new int[longestSequence + 1];
 		for(int i = 1; i<returnArray.length; i++)
 		{
-			returnArray[i] = intRay[longestSequenceEnd - longestSequence+i-1];
+			returnArray[i] = intRay[longestSequenceStart+i-1];
 		}
 		returnArray[0] = longestSequenceStart;
 		return returnArray;
