@@ -6,4 +6,8 @@ public class Borough {
 	public Borough(String n) {
 		this.name = n;
 	}
+	
+	public String toString() {
+		return name;
+	}
 }

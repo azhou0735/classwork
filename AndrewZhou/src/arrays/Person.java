@@ -1,8 +1,7 @@
 package arrays;
 
-import work.Borough;
-
 public class Person {
+	
 	private String firstName;
 	private String lastName;
 	private Borough home;
@@ -11,5 +10,9 @@ public class Person {
 		this.firstName = f;
 		this.lastName = l;
 		this.home = h;
+	}
+	
+	public String toString() {
+		return "My name is "+firstName+" "+lastName+" and I live in "+home+".";
 	}
 }
