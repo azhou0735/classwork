@@ -2,7 +2,7 @@ package arrays;
 
 public class Student extends Person {
 
-	public static final String[] grades = {"Freshman","Sophmore","Junior","Senior","Shock Trooper"};
+	public static final String[] grades = {"Freshman","Sophmore","Junior","Senior","Shock Senior"};
 	
 	private String grade;
 	

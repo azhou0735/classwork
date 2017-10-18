@@ -5,6 +5,7 @@ public class ObjectArrays {
 	public ObjectArrays() {
 		Person[] people = new Person[20];
 		populate(people);
+		people[0] = new Thing("coffee maker");
 		for(Person p:people)
 		{
 			System.out.println(p);
@@ -17,6 +18,8 @@ public class ObjectArrays {
 			String firstName = randomNameFrom(Person.FIRST_START, Person.FIRST_MIDDLE, Person.FIRST_END);
 			String lastName = randomNameFrom(Person.LAST_START, Person.LAST_MIDDLE, Person.LAST_END);
 			Borough b = randomBorough();
+			
+			//Have multiple data types in Object[] (sub-classes of the declared type)
 			if(Math.random() < 0.6) {
 				//60% of the time...
 				int grade = (int)(Math.random()*5)+9;
