@@ -3,16 +3,16 @@ package arrays;
 public class ObjectArrays {
 	
 	public ObjectArrays() {
-		Person[] people = new Person[20];
+		Object[] people = new Object[20];
 		populate(people);
 		people[0] = new Thing("coffee maker");
-		for(Person p:people)
+		for(Object p:people)
 		{
 			System.out.println(p);
 		}
 	}
 
-	private void populate(Person[] people) {
+	private void populate(Object[] people) {
 		for(int i = 0; i < people.length; i++)
 		{
 			String firstName = randomNameFrom(Person.FIRST_START, Person.FIRST_MIDDLE, Person.FIRST_END);
