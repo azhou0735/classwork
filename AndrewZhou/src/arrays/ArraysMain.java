@@ -61,12 +61,13 @@ public class ArraysMain {
 					}
 			}
 		}
-		int[] returnArray = new int[longestSequence + 1];
-		for(int i = 1; i<returnArray.length; i++)
+		int[] returnArray = new int[longestSequence + 2];
+		for(int i = 2; i<returnArray.length; i++)
 		{
 			returnArray[i] = intRay[longestSequenceStart+i-1];
 		}
-		returnArray[0] = longestSequenceStart;
+		returnArray[0] = longestSequence;
+		returnArray[1] = longestSequenceStart;
 		return returnArray;
 	}
 
