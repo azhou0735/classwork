@@ -3,15 +3,41 @@ package arrays;
 public class ObjectArrays {
 	
 	public ObjectArrays() {
-		Object[] people = new Object[20];
+		Person[] people = new Person[30];
 		populate(people);
-		people[0] = new Thing("coffee maker");
-		for(Object p:people)
+		//people[0] = new Thing("coffee maker");
+		Person[] z = selectGroup(people,20);
+		Person[] y = selectGroup(people,20);
+		for(Person p:people)
 		{
-			System.out.println(p);
+			p.mingle(people);
+			p.printFriends();
+			System.out.println("");
 		}
+			
+		System.out.println(countDifferences(y,z));
 	}
 
+	public double countDifferences(Person[] arr1, Person[] arr2) {
+		int differencesCount = 0;
+		for(int i = 0; i < arr1.length; i++)
+		{
+			if(arr1[i]!=arr2[i])
+				differencesCount++;
+		}
+		return differencesCount;
+	}
+	
+	public void testShuffling(Person[] people)
+	{
+		int sum = 0;
+		for(int i = 0; i < 100; i++)
+		{
+			sum += countDifferences(selectGroup(people,20),selectGroup(people,20));
+		}
+		System.out.println(sum/100);
+	}
+	
 	private void populate(Object[] people) {
 		for(int i = 0; i < people.length; i++)
 		{
@@ -43,5 +69,30 @@ public class ObjectArrays {
 		return arr[(int)(Math.random()*arr.length)];
 	}
 	
+	public Person[] selectGroup(Person[] population, int length){
+		Person[] returnArr = new Person[length];
+		if(population.length == length)
+			return population;
+		for(int i = 0; i < returnArr.length; i++) {
+			returnArr[i] = population[(int)(Math.random()*population.length-1)];
+			for(int j = 0; j < returnArr.length; j++) {
+				if(returnArr[j] == returnArr[i] && j != i)
+				{
+					i--;
+					break;
+				}
+			}
+		}
+		return returnArr;
+	}
 	
+	public static boolean personInGroup(Person[] a, Person b) {
+		for(int j = 0; j < a.length; j++) {
+			if(a[j] == b)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 }
