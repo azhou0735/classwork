@@ -30,12 +30,12 @@ public class ObjectArrays {
 	
 	public void testShuffling(Person[] people)
 	{
-		int sum = 0;
-		for(int i = 0; i < 100; i++)
+		double sum = 0;
+		for(int i = 0; i < 101; i++)
 		{
 			sum += countDifferences(selectGroup(people,20),selectGroup(people,20));
 		}
-		System.out.println(sum/100);
+		System.out.println(sum/101);
 	}
 	
 	private void populate(Object[] people) {
