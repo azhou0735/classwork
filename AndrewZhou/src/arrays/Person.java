@@ -15,6 +15,7 @@ public class Person {
 	private Borough home;
 	private Hobby hobby;
 	private Person[] friends;
+	private String nickname;
 			
 	public Person(String f, String l, Borough h) {
 		this.firstName = f;
@@ -22,6 +23,7 @@ public class Person {
 		this.home = h;
 		this.hobby = Hobby.randomHobby();
 		friends = new Person[3];
+		this.nickname = createNickname(firstName);
 	}
 	
 	public void mingle(Person[] people) {
@@ -73,6 +75,36 @@ public class Person {
 	}
 	
 	public String toString() {
-		return "My name is "+firstName+" "+lastName+" and I live in "+home+"." +"I like "+hobby;
+		return "My name is "+firstName+" "+lastName+" and I live in "+home+". Call me "+nickname+". I like "+hobby;
+	}
+	
+	//JAVA IS PASS-BY-VALUE
+	//the parameters of a method are just values, not references
+	public static String createNickname(String name) {
+		String[] vowels = {"a","e","i","o","u"};
+		String returnWord = "";
+		boolean firstVowel = false;
+		for(int i = 0; i < name.length(); i++) {
+			for(String v:vowels) {
+				if(firstVowel && name.substring(i,i+1).equals(v)) {
+					return returnWord;
+				}else if(name.substring(i,i+1).equals(v)) {
+						firstVowel = true;
+						break;
+					}
+			}
+			returnWord += name.substring(i,i+1);
+		}
+		return returnWord;
+	}
+	
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+		this.nickname = createNickname(firstName);
 	}
 }

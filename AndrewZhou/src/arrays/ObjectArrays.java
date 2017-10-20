@@ -8,20 +8,17 @@ public class ObjectArrays {
 		//people[0] = new Thing("coffee maker");
 		Person[] z = selectGroup(people,20);
 		Person[] y = selectGroup(people,20);
-		for(Person p:people)
-		{
+		for(Person p:people){
 			p.mingle(people);
 			p.printFriends();
 			System.out.println("");
-		}
-			
+		}	
 		System.out.println(countDifferences(y,z));
 	}
 
 	public double countDifferences(Person[] arr1, Person[] arr2) {
 		int differencesCount = 0;
-		for(int i = 0; i < arr1.length; i++)
-		{
+		for(int i = 0; i < arr1.length; i++){
 			if(arr1[i]!=arr2[i])
 				differencesCount++;
 		}
@@ -31,8 +28,7 @@ public class ObjectArrays {
 	public void testShuffling(Person[] people)
 	{
 		double sum = 0;
-		for(int i = 0; i < 101; i++)
-		{
+		for(int i = 0; i < 101; i++){
 			sum += countDifferences(selectGroup(people,20),selectGroup(people,20));
 		}
 		System.out.println(sum/101);
@@ -88,8 +84,7 @@ public class ObjectArrays {
 	
 	public static boolean personInGroup(Person[] a, Person b) {
 		for(int j = 0; j < a.length; j++) {
-			if(a[j] == b)
-			{
+			if(a[j] == b){
 				return true;
 			}
 		}
