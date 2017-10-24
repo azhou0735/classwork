@@ -118,6 +118,13 @@ public class CaveRoom {
 		
 	}
 
+	/**
+	 * This will be where your group sets up all the caves and all the connections
+	 */
+	public static void setUpCaves() {
+		
+	}
+	
 	public String getDescription() {
 		return description;
 	}
