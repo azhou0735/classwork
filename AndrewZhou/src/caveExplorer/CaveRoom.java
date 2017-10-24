@@ -61,6 +61,62 @@ public class CaveRoom {
 		String[] theDirections = {"the North","the East","the South","the West"};
 		return theDirections[dir];
 	}
+	
+	public void enter() {
+		contents = "X";
+	}
+
+	public void leave() {
+		contents = defaultContents;
+	}
+	
+	/**
+	 * Gives this room access to anotherRoom ( and vice-versa) and sets a door between them, updating the directions
+	 * @param direction
+	 * @param anotherRoom
+	 * @param door
+	 */
+	public void setConnection(int direction, CaveRoom anotherRoom, Door door) {
+		addRoom(direction, anotherRoom, door);
+		anotherRoom.addRoom(oppositeDirection(direction), this, door);
+	}
+	
+	public static int oppositeDirection(int direction) {
+		return (direction+2)%4;
+		//int[] opp = {2,3,0,1};
+		//return opp[direction];
+	}
+
+	public void addRoom(int direction, CaveRoom cave, Door door) {
+		borderingRooms[direction] = cave;
+		doors[direction] = door;
+		setDirections();
+		
+	}
+
+	public void interpretInput(String input) {
+		while(isValid(input)) {
+			System.out.println("You can only enter 'w','a','s', or 'd'.");
+			input = CaveExplorer.in.nexLine();
+		}
+		String wdsa = "wdsa";
+		goToRoom(wdsa.indexOf(input));
+	}
+	
+	private boolean isValid(String input) {
+		String validEntries = "wdsa";
+		return validEntries.indexOf(input) > -1 && input.length() == 1;
+	}
+
+	private void goToRoom(int direction) {
+		if(doors[direction] != null && borderingRooms[direction] != null) {
+			CaveExplorer.currentRoom.leave();
+			CaveExplorer.currentRoom = borderingRooms[direction];
+			CaveExplorer.currentRoom.enter();
+			CaveExplorer.inventory.updateMap();
+		}
+		
+	}
 
 	public String getDescription() {
 		return description;
