@@ -80,6 +80,7 @@ public class NPC {
 		moves[1] = possibleMoves[rand][1] + currentCol;
 		while()
 		return moves;
+		//Bot7273
 	}
 
 }
