@@ -7,7 +7,7 @@ public class Chatbot{
 	private boolean chatting;
 	
 	public Chatbot() {
-		andrew = new ChatbotAndrew();
+		//andrew = new ChatbotAndrew();
 		userName = "unknown user";
 		chatting = true;
 	}
