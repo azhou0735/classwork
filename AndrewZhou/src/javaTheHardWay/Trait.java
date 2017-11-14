@@ -4,7 +4,7 @@ public class Trait {
 
 		public static final String[] traits = {
 			"striped", "long-tailed", "furry", " brown", "short-eared",
-			"spotted", "short-tailed", "hairles", "white", "long-eared"};
+			"spotted", "short-tailed", "hairless", "white", "long-eared"};
 		
 		private String description;
 		private int index;
