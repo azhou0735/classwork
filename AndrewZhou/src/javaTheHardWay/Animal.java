@@ -23,6 +23,15 @@ public class Animal {
 		age = 0;
 	}
 	
+	public Animal(String description, Trait trait1, Trait trait2) {
+		this.trait1 = trait1;
+		this.trait2 = trait2;
+		while(trait2.equals(trait1)) {
+			trait2 = new Trait();
+		}
+		this.description = description;
+	}
+	
 	public String getName() {
 		return "animal";
 	}
