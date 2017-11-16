@@ -9,13 +9,13 @@ public class Animal {
 	private int age;
 	private boolean mated;
 	
-	public static void main(String[] args) {
+	/*public void main(String[] args) {
 		
 		for(int i = 0; i < 10; i++) {
 			Animal someAnimal = new Animal();
 			System.out.println(someAnimal);
 		}
-	}
+	}*/
 	
 	public Animal() {
 		chooseTraits();
