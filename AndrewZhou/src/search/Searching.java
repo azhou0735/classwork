@@ -43,8 +43,9 @@ public class Searching {
 				+ "\n    Press 'enter' to begin.");
 		in.nextLine();
 
-		int index = search(numbers, target);
-
+		int index = binarySearch(numbers, 0, numbers.length-1,  target);
+		//int index = search(numbers, target);
+		
 		if(index!=-1){
 			System.out.println("The number "+target+" was found at index "+index+". Did the computer win?");
 		}else{
@@ -64,6 +65,23 @@ public class Searching {
 
 		return -1;
 	}
+	
+	public static int binarySearch(int[] searchThis, int startIndex, int endIndex, int target) {
+		int inBtw = (int)((startIndex+endIndex)/2);
+		if(searchThis[inBtw] == target) {
+			return inBtw;
+		}else {
+			if(searchThis[inBtw] > target) {
+				binarySearch(searchThis, startIndex, inBtw, target);
+			}else {
+				if(searchThis[inBtw] < target) {
+					binarySearch(searchThis, inBtw, endIndex, target);
+				}
+			}
+		}
+		return -1;
+	}
+
 	
 	/**
 	 * The delay method is designed to slow down your algorithm. Without a delay,
