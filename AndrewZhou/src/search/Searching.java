@@ -71,15 +71,14 @@ public class Searching {
 		if(searchThis[inBtw] == target) {
 			return inBtw;
 		}else {
+			if(startIndex == endIndex -1) return -1;
 			if(searchThis[inBtw] > target) {
-				binarySearch(searchThis, startIndex, inBtw, target);
-			}else {
-				if(searchThis[inBtw] < target) {
-					binarySearch(searchThis, inBtw, endIndex, target);
-				}
+				inBtw = binarySearch(searchThis, startIndex, inBtw, target);
+			}else if(searchThis[inBtw] < target) {
+					inBtw = binarySearch(searchThis, inBtw, endIndex, target);
 			}
 		}
-		return -1;
+		return inBtw;
 	}
 
 	
