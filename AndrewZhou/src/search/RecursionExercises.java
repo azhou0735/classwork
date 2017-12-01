@@ -6,6 +6,7 @@ public class RecursionExercises {
 		int value = 10008;
 		System.out.println(value+"! is equal to " +factorial(value));
 		System.out.println(value+" has "+countPrimeFactors(value,2)+" prime factors.");
+		towerSolution(2,"A","B","C");
 	}
 
 	private static int countPrimeFactors(int value, int i) {
@@ -26,6 +27,13 @@ public class RecursionExercises {
 		}
 	}
 	
-	
+	private static void towerSolution(int n, String s, String h, String e) {
+		if(n == 1) {
+			System.out.println(s +" to "+ e);
+		}else {
+			System.out.println(s +" to "+ h);
+			towerSolution(n-1,h,s,e);
+		}
+	}
 	
 }
