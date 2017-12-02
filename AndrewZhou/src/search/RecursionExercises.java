@@ -30,7 +30,8 @@ public class RecursionExercises {
 	private static void towerSolution(int n, String s, String h, String e) {
 		if(n <= 1) {
 			//System.out.println(s +" "+ h+" " + e);
-			System.out.println(s +" to "+ e + " " + n); //base case (center, always exists, A to C)
+			System.out.println(s +" to "+ e + " " + n); //this is false -> base case (center, always exists, A to C)
+			// ^doesn't matter what it is as long as the bottom two function recalls are organized appropiately
 		}else { //below has to print out (2^n)-2 (above uses 1)
 			//System.out.println(s +" "+ h+" " + e);
 			//B is always in the same position when in reverse
