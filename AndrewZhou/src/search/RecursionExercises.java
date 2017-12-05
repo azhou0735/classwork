@@ -6,7 +6,8 @@ public class RecursionExercises {
 		//int value = 10008;
 		//System.out.println(value+"! is equal to " +factorial(value));
 		//System.out.println(value+" has "+countPrimeFactors(value,2)+" prime factors.");
-		towerSolution(4,"A","B","C");
+		//towerSolution(4,"A","B","C");
+		System.out.println(fibonacciSequence(6));
 	}
 
 	private static int countPrimeFactors(int value, int i) {
@@ -38,6 +39,14 @@ public class RecursionExercises {
 			towerSolution(n-1,s,e,h); // <-- priority is how to replicate the 2^n -1 count
 			System.out.println(s +" to "+ e + " " + n); //this is A to C which is the center of all the solutions
 			towerSolution(n-1,h,s,e); // <-- this is the 2^n
+		}
+	}
+	
+	private static int fibonacciSequence(int n) {
+		if(n <= 1) {
+			return n%2;
+		}else {
+			return fibonacciSequence(n-1) + fibonacciSequence(n-2);
 		}
 	}
 	
